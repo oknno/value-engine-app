@@ -1,5 +1,5 @@
 import { ensureConfig } from '../../bootstrap/appConfig'
-import type { ApiError, HttpRequestOptions } from '../../types/api'
+import type { ApiError, HttpRequestOptions } from '../../../domain/types/entities'
 
 const buildUrl = (path: string): string => {
   const { sharePointSiteUrl } = ensureConfig()

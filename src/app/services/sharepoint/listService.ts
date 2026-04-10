@@ -1,5 +1,5 @@
 import { spHttpClient } from '../../lib/http/spHttpClient'
-import type { SharePointListResponse } from '../../types/api'
+import type { SharePointListResponse } from '../../../domain/types/entities'
 
 const toListItemsPath = (listTitle: string): string =>
   `/_api/web/lists/getbytitle('${encodeURIComponent(listTitle)}')/items`
