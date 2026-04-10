@@ -58,6 +58,15 @@ Componentes visuais reutilizáveis para páginas e fluxos.
 
 - `Button.tsx`, `Card.tsx`, `Input.tsx`: blocos básicos de UI para acelerar construção de telas.
 
+## Pré-requisitos
+
+- Projeto suportado em **Node 18.x**.
+- Verifique sua versão do Node:
+
+```bash
+node -v
+```
+
 ## Configuração de ambiente (SharePoint)
 
 Crie um arquivo `.env` (ou `.env.local`) na raiz do projeto:
