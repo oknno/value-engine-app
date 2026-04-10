@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { Card } from '../components/ui/Card'
-import type { AppView } from '../../App'
+import type { AppView } from '../../domain/constants/appViews'
 import { AppShell } from './AppShell'
 
 interface MainLayoutProps {
