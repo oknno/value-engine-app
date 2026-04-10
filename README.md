@@ -1,73 +1,44 @@
-# React + TypeScript + Vite
+# Value Engine App (React + TypeScript + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação React com TypeScript empacotada com Vite.
 
-Currently, two official plugins are available:
+## Scripts disponíveis
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- `npm run dev`: inicia ambiente de desenvolvimento.
+- `npm run build`: valida TypeScript no modo build, gera bundle e copia o manifesto.
+- `npm run preview`: serve o build localmente.
+- `npm run clean`: remove artefatos de build.
+- `npm run lint`: roda ESLint em `src/**/*.ts` e `src/**/*.tsx`.
+- `npm run typecheck`: valida tipos TypeScript sem emitir arquivos.
+- `npm run test`: executa testes automatizados (Vitest) em modo CI.
+- `npm run test:watch`: executa testes em modo watch.
 
-## React Compiler
+## Qualidade de código
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+A base usa ESLint com regras para:
 
-## Expanding the ESLint configuration
+- JavaScript recomendado (`@eslint/js`);
+- TypeScript com análise baseada em projeto (`typescript-eslint`);
+- Boas práticas de hooks React (`eslint-plugin-react-hooks`);
+- compatibilidade com React Refresh no Vite (`eslint-plugin-react-refresh`).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Testes
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+A suíte usa Vitest com teste inicial de renderização do `App` via `react-dom/server`.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Exemplo inicial coberto:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- renderização do componente `App`.
+
+## Fluxo padrão de contribuição (pré-PR)
+
+Antes de abrir PR, execute na raiz do projeto:
+
+```bash
+npm run lint
+npm run typecheck
+npm run test
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Esse fluxo garante estilo, tipagem, cobertura mínima de regressão e build íntegro.
