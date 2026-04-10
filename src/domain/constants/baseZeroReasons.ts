@@ -1,0 +1,9 @@
+export const BASE_ZERO_REASONS = [
+  'NOVA_DEMANDA',
+  'MUDANCA_ESTRATEGICA',
+  'CORRECAO_PREMISSA',
+  'OBRIGATORIEDADE_REGULATORIA',
+  'AJUSTE_OPERACIONAL',
+] as const
+
+export type BaseZeroReason = (typeof BASE_ZERO_REASONS)[number]

@@ -1,4 +1,4 @@
-export type PeriodStatus = 'ABERTO' | 'EM_FECHAMENTO' | 'FECHADO'
+import type { PeriodStatus } from '../constants/status'
 
 export interface CompetencePeriod {
   id: string

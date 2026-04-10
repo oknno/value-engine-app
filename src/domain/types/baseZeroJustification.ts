@@ -1,8 +1,6 @@
-export type JustificationCategory =
-  | 'REABERTURA_COMPETENCIA'
-  | 'OVERRIDE_FLUXO'
-  | 'APROVACAO_FORA_PADRAO'
-  | 'EXCECAO_BASE_ZERO'
+import type { MandatoryScenario } from '../constants/mandatoryScenarios'
+
+export type JustificationCategory = MandatoryScenario
 
 export interface BaseZeroJustification {
   id: string

@@ -1,4 +1,6 @@
-export type WorkflowState = 'RASCUNHO' | 'EM_REVISAO' | 'APROVADO' | 'PUBLICADO' | 'ARQUIVADO'
+import type { WorkflowStatus } from '../constants/status'
+
+export type WorkflowState = WorkflowStatus
 
 export type WorkflowAction =
   | 'ENVIAR_REVISAO'

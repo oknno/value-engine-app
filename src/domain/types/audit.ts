@@ -1,3 +1,5 @@
+import type { UserRole } from '../constants/roles'
+
 export type AuditEntityType = 'WORKFLOW' | 'PERIOD' | 'BASE_ZERO' | 'ACCESS'
 
 export type AuditActionType =
@@ -11,7 +13,7 @@ export type AuditActionType =
 export interface AuditActor {
   userId: string
   displayName: string
-  role: string
+  role: UserRole
 }
 
 export interface AuditEntry {
