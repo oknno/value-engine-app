@@ -11,7 +11,8 @@
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "preinstall": "node scripts/check-node-version.mjs"
   },
   "dependencies": {
     "clsx": "2.1.1",
