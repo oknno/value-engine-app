@@ -13,7 +13,7 @@ export interface ListItemsQuery extends SpQueryParams {}
 const toListItemsPath = (listTitle: string): string =>
   `/_api/web/lists/getbytitle('${encodeURIComponent(listTitle)}')/items`
 
-const withItemType = <TFields extends Record<string, unknown>>(
+const withItemType = <TFields extends object>(
   fields: TFields,
   entityTypeFullName: string,
 ): TFields & SharePointMetadata => ({
@@ -22,12 +22,12 @@ const withItemType = <TFields extends Record<string, unknown>>(
 })
 
 export const buildListService = (listTitle: string, entityTypeFullName: string) => ({
-  async getItems<TFields = Record<string, unknown>>(query: ListItemsQuery) {
+  async getItems<TFields = object>(query: ListItemsQuery) {
     const response = await spClient.get<SharePointListResponse<TFields>>(toListItemsPath(listTitle), query)
     return response.value
   },
 
-  async createItem<TFields extends Record<string, unknown>>(fields: TFields) {
+  async createItem<TFields extends object>(fields: TFields) {
     return spClient.request(toListItemsPath(listTitle), {
       method: 'POST',
       headers: {
@@ -37,7 +37,7 @@ export const buildListService = (listTitle: string, entityTypeFullName: string) 
     })
   },
 
-  async updateItem<TFields extends Record<string, unknown>>(id: number, fields: Partial<TFields>) {
+  async updateItem<TFields extends object>(id: number, fields: Partial<TFields>) {
     return spClient.request(`${toListItemsPath(listTitle)}(${id})`, {
       method: 'PATCH',
       headers: {
