@@ -1,0 +1,26 @@
+{
+  "name": "starter-kit-react-sharepoint",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build && node scripts/copy-manifest.mjs",
+    "preview": "vite preview",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "clsx": "2.1.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.0",
+    "@types/react-dom": "19.0.0",
+    "@vitejs/plugin-react": "5.0.0",
+    "cpy": "11.1.0",
+    "rimraf": "6.0.1",
+    "typescript": "5.8.2",
+    "vite": "5.4.11"
+  }
+}
