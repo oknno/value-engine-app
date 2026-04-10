@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitest/config'
+import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'node:path'
 
@@ -18,10 +18,5 @@ export default defineConfig({
     sourcemap: false,
     emptyOutDir: true,
     target: 'es2019',
-  },
-  test: {
-    environment: 'node',
-    globals: true,
-    include: ['src/**/*.test.{ts,tsx}'],
   },
 })
