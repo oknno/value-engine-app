@@ -1,59 +1,42 @@
-import "./App.css";
+import './App.css'
+import { useState } from 'react'
+import { Button } from './app/components/ui/Button'
+import { Card } from './app/components/ui/Card'
+import { Input } from './app/components/ui/Input'
 
 function App() {
+  const [name, setName] = useState('')
+
   return (
     <div className="app-shell">
       <main className="app-page">
         <header className="app-header">
           <div className="app-header__title">
             <h1>Starter Kit React + SharePoint</h1>
-            <p>
-              Base oficial para sistemas internos com React, TypeScript, Vite e
-              SharePoint Lists.
-            </p>
+            <p>Base MVP com configuração, cliente HTTP e componentes essenciais.</p>
           </div>
         </header>
 
-        <section className="app-content">
-          <div className="app-card">
-            <div className="app-card__body">
-              <h2 className="app-section-title">Área principal</h2>
-              <div className="app-placeholder">
-                <div className="app-placeholder__line app-placeholder__line--lg" />
-                <div className="app-placeholder__line" />
-                <div className="app-placeholder__line" />
-                <div className="app-placeholder__line" />
-                <div className="app-placeholder__line" />
+        <section className="app-content" style={{ gridTemplateColumns: '1fr', maxWidth: 640 }}>
+          <Card title="Formulário inicial">
+            <div style={{ display: 'grid', gap: 12 }}>
+              <Input
+                id="name"
+                label="Nome"
+                onChange={(event) => setName(event.target.value)}
+                placeholder="Digite seu nome"
+                value={name}
+              />
+              <div style={{ display: 'flex', gap: 8 }}>
+                <Button>Salvar</Button>
+                <Button variant="secondary">Cancelar</Button>
               </div>
             </div>
-          </div>
-
-          <aside className="app-aside">
-            <div className="app-card">
-              <div className="app-card__body">
-                <h2 className="app-section-title">Resumo</h2>
-                <div className="app-placeholder">
-                  <div className="app-placeholder__line" />
-                  <div className="app-placeholder__line" />
-                  <div className="app-placeholder__line" />
-                </div>
-              </div>
-            </div>
-
-            <div className="app-card">
-              <div className="app-card__body">
-                <h2 className="app-section-title">Próximos passos</h2>
-                <div className="app-placeholder">
-                  <div className="app-placeholder__line" />
-                  <div className="app-placeholder__line" />
-                </div>
-              </div>
-            </div>
-          </aside>
+          </Card>
         </section>
       </main>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
