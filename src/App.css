@@ -61,9 +61,15 @@
 
 .app-nav__item {
   display: block;
+  width: 100%;
   padding: 8px 12px;
   border-radius: var(--radius-sm);
   color: var(--text);
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
 }
 
 .app-nav__item--active {
@@ -79,6 +85,11 @@
 }
 
 .home-page {
+  display: grid;
+  gap: 16px;
+}
+
+.view-page {
   display: grid;
   gap: 16px;
 }

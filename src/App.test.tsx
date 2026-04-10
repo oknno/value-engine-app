@@ -2,9 +2,10 @@ import { renderToString } from 'react-dom/server'
 import App from './App'
 
 describe('App', () => {
-  it('renderiza o conteúdo inicial da HomePage', () => {
+  it('renderiza a view padrão de Iniciativas', () => {
     const html = renderToString(<App />)
 
-    expect(html).toContain('Página inicial')
+    expect(html).toContain('Iniciativas')
+    expect(html).toContain('Navegação interna por estado ativa')
   })
 })
