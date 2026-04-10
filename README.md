@@ -61,6 +61,8 @@ Componentes visuais reutilizáveis para páginas e fluxos.
 ## Pré-requisitos
 
 - Projeto suportado em **Node 18.x**.
+- O comando `npm install` valida automaticamente a versão do Node no `preinstall`.
+- Em versão incompatível (ex.: Node 20+), a instalação falha com a mensagem: **“Use Node 18.x para este projeto.”**
 - Verifique sua versão do Node:
 
 ```bash
